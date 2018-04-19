@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="17"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1"/>
+	<subDataset name="dataset1"/>
+	<subDataset name="dataset2"/>
+	<parameter name="AC/NO" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="GALLONAMOUNT" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PAISE" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from data where [ACCOUNT NO]=$P{AC/NO}]]>
+	</queryString>
+	<field name="ACCOUNT NO" class="java.lang.Integer"/>
+	<field name="CUSTOMER NAME" class="java.lang.String"/>
+	<field name="CONTACT" class="java.lang.String"/>
+	<field name="ADDRESS" class="java.lang.String"/>
+	<field name="RATE/GALLON" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="620" splitType="Prevent">
+			<staticText>
+				<reportElement x="134" y="0" width="281" height="39"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="SansSerif" size="28" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Rawjani Traders]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="134" y="39" width="281" height="25"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Marketing & Distribution Network]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="161" y="64" width="64" height="31"/>
+				<textElement>
+					<font fontName="MV Boli" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precious ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="225" y="64" width="177" height="31"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[Premium Drinking Water]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="105" width="46" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="11" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[AC/NO.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="46" y="124" width="120" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="140" width="46" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[M/s.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="46" y="159" width="509" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="416" y="103" width="35" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="455" y="123" width="100" height="1"/>
+			</line>
+			<rectangle>
+				<reportElement x="0" y="172" width="555" height="165"/>
+			</rectangle>
+			<line>
+				<reportElement x="64" y="172" width="1" height="165"/>
+			</line>
+			<line>
+				<reportElement x="0" y="207" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement x="433" y="172" width="1" height="165"/>
+			</line>
+			<line>
+				<reportElement x="351" y="172" width="1" height="165"/>
+			</line>
+			<rectangle>
+				<reportElement x="433" y="337" width="122" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="434" y="172" width="119" height="36"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="352" y="172" width="81" height="35"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="63" y="172" width="288" height="36"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Particulars]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-2" y="172" width="65" height="36"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qty.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="352" y="337" width="81" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="46" y="140" width="100" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CUSTOMER NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="46" y="105" width="100" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ACCOUNT NO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="450" y="0" width="105" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="10" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Soldier Bazar Karachi ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="483" y="20" width="72" height="14"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[0331-2015214]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="483" y="34" width="72" height="15"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[0322-2675356]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="483" y="49" width="72" height="15"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[0300-2161190]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="20" width="31" height="14"/>
+				<textElement/>
+				<text><![CDATA[Cell:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="396" width="105" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="12" isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Receiver`s Sign.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="256" y="396" width="77" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Accountant]]></text>
+			</staticText>
+			<line>
+				<reportElement x="105" y="415" width="120" height="1"/>
+			</line>
+			<line>
+				<reportElement x="341" y="414" width="126" height="1"/>
+			</line>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="457" y="103" width="98" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="333" y="448" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Developed By:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="433" y="448" width="122" height="20"/>
+				<textElement/>
+				<text><![CDATA[Muhammad Asad jivani]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="468" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Contact:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="433" y="468" width="120" height="20"/>
+				<textElement/>
+				<text><![CDATA[0320-9209843]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="351" y="240" width="81" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RATE/GALLON}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="240" width="63" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{GALLONAMOUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="446" y="240" width="69" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PAISE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="515" y="240" width="27" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[/=]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" whenNoDataType="BlankPage" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="98"/>
+	<parameter name="AC/NO" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from data,data2 where DATA.[ACCOUNT NO]=$P{AC/NO} AND data2.[ACCOUNT NO]=$P{AC/NO}]]>
+	</queryString>
+	<field name="ACCOUNT NO" class="java.lang.Integer"/>
+	<field name="CUSTOMER NAME" class="java.lang.String"/>
+	<field name="CONTACT" class="java.lang.String"/>
+	<field name="ADDRESS" class="java.lang.String"/>
+	<field name="RATE/GALLON" class="java.lang.Integer"/>
+	<field name="DELIVERY NO" class="java.lang.Integer"/>
+	<field name="GALLON DELIVERED" class="java.lang.Integer"/>
+	<field name="GALLON RECIEVED" class="java.lang.Integer"/>
+	<field name="GALLON BALANCE" class="java.lang.Integer"/>
+	<field name="DATE" class="java.sql.Date"/>
+	<variable name="GALLON DELIVERED_1" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{GALLON DELIVERED}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="267" splitType="Stretch">
+			<staticText>
+				<reportElement x="155" y="20" width="242" height="43"/>
+				<box>
+					<pen lineWidth="0.25" lineStyle="Double"/>
+					<topPen lineWidth="0.0" lineStyle="Double"/>
+					<leftPen lineWidth="0.0" lineStyle="Double"/>
+					<bottomPen lineWidth="0.0" lineStyle="Double"/>
+					<rightPen lineWidth="0.0" lineStyle="Double"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MV Boli" size="26" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[PRECIOUS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="131" width="100" height="18"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CUSTOMER NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="99" width="41" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AC/NO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="108" y="146" width="356" height="1"/>
+			</line>
+			<line>
+				<reportElement x="49" y="118" width="30" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="108" y="126" width="100" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CUSTOMER NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="99" width="29" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ACCOUNT NO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="155" y="63" width="242" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Constantia" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PREMIUM DRINKING WATER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="83" width="242" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[0331-2015214, 0300-2161190, 0322-2675356]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="0" width="41" height="20"/>
+				<textElement/>
+				<text><![CDATA[DATE:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="40" y="0" width="92" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="160" width="100" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ADDRESS]]></text>
+			</staticText>
+			<line>
+				<reportElement x="108" y="180" width="447" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="108" y="161" width="100" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ADDRESS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="193" width="100" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RATE/PC]]></text>
+			</staticText>
+			<line>
+				<reportElement x="108" y="213" width="24" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="107" y="193" width="59" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{RATE/GALLON}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="228" width="100" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONTACT]]></text>
+			</staticText>
+			<line>
+				<reportElement x="107" y="247" width="79" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="107" y="227" width="81" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CONTACT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="63" splitType="Stretch">
+			<staticText>
+				<reportElement x="427" y="37" width="128" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="428" y="17" width="128" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BALANCE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="303" y="37" width="124" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="304" y="17" width="123" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RECEIVED]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="37" width="115" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="17" width="116" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ DELIVERED]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="61" y="37" width="126" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="61" y="17" width="126" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DELIVERY ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="0" width="58" height="63"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATE]]></text>
+			</staticText>
+			<line>
+				<reportElement x="427" y="0" width="1" height="63"/>
+			</line>
+			<line>
+				<reportElement x="303" y="0" width="1" height="63"/>
+			</line>
+			<line>
+				<reportElement x="187" y="0" width="1" height="63"/>
+			</line>
+			<line>
+				<reportElement x="60" y="0" width="1" height="63"/>
+			</line>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="0" width="556" height="63"/>
+			</rectangle>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="60" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="303" y="0" width="124" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{GALLON RECIEVED}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="428" y="0" width="128" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{GALLON BALANCE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="61" y="0" width="126" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DELIVERY NO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="186" y="0" width="117" height="20"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{GALLON DELIVERED}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="60" y="0" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement x="303" y="0" width="1" height="20"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="280" y="13" width="104" height="17"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="170" splitType="Stretch"/>
+	</summary>
+</jasperReport>
